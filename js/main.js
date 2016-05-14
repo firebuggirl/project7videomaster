@@ -17,7 +17,7 @@ function intializePlayer(){
   mutebtn.addEventListener("click",vidmute,false);
   volumeslider.addEventListener("change",setvolume,false);
   fullscreenbtn.addEventListener("click", toggleFullScreen, false);
-  
+
 
 
 
@@ -69,32 +69,36 @@ window.onload = intializePlayer;
 
 var pause = document.getElementById("pause");
 var play = document.getElementById("play");
-function toggleButton() {
-		if (play.style.display === 'none') {
-				play.style.display = 'block';
-				pause.style.display = 'none';
-		} else {
-				play.style.display = 'none';
-				pause.style.display = 'block';
-		}
-}
+
+//function toggleButton() {
+//		if (play.style.display === 'none') {
+	//			play.style.display = 'block';
+	//			pause.style.display = 'none';
+	//	} else {
+	//			play.style.display = 'none';
+	//			pause.style.display = 'block';
+	//	}
+//}
+
 
 
 function playPause(){
-	if(vid.paused){
+	if(vid.paused) {
 		vid.play();
+		play.style.display = 'none';
+		pause.style.display = 'block';
+
 
 	} else {
 		vid.pause();
-
-    toggleButton();
+		play.style.display = 'block';
+		pause.style.display = 'none';
 
 		// Prevent Default Action
 		return false;
 
 	}
 };
-
 
 
 for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
