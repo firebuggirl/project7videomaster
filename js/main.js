@@ -1,8 +1,11 @@
-var vid, playbtn, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn, cc;
+var vid, playbtn, stop, seekslider, curtimetext, durtimetext, mutebtn, volumeslider, fullscreenbtn, cc;
 function intializePlayer(){
 	// Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
+
+	stop = document.getElementById('stop');
+
 	seekslider = document.getElementById("seekslider");
   curtimetext = document.getElementById("curtimetext");
 	durtimetext = document.getElementById("durtimetext");
@@ -19,7 +22,11 @@ function intializePlayer(){
   fullscreenbtn.addEventListener("click", toggleFullScreen, false);
 
 
-
+	stop.addEventListener('click', function(e) {
+	    vid.pause();
+	    vid.currentTime = 0;
+	    progress.value = 0;
+	 });
 
 var track = vid.addTextTrack('subtitles', 'test', 'en');// add track element for subtitles via JS instead of directly in HTML
 track.mode = 'hidden';
