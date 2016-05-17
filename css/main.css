@@ -38,10 +38,8 @@ div#video_controls_bar{
   width: auto;
 }
 input#seekslider{
-  width:98%;
-  height:20px;
-  background-color: red;
-  margin-left: 1%;
+  width:100%;
+  height: 5px;
 }
 
 
@@ -62,14 +60,20 @@ input#seekslider{
 
 button#playpausebtn{
 	border:none;
-	width:26px;
+	width:28px;
 	height:28px;
 	cursor:pointer;
 	opacity:0.7;
   background-color: transparent;
+  margin-right: 60px;
 }
 button#playpausebtn:hover{
   opacity:1;
+}
+
+.time{
+  margin-top: 4px;
+  position: absolute;
 }
 
 #pause{
@@ -77,7 +81,7 @@ button#playpausebtn:hover{
 }
 #stop{
   border:none;
-	width:26px;
+	width:34px;
 	height:28px;
 	cursor:pointer;
 	opacity:0.7;
@@ -105,22 +109,50 @@ button#mutebtn{
 
 
 
-input#volumeslider{ width: 80px;}
+input#volumeslider{
+  width: 80px;
+}
+
 input[type='range'] {
-    -webkit-appearance: none !important;
-    background: transparent;
+    -webkit-appearance: none !important; /* Hides the slider so that custom slider can be made */
+    background: transparent; /* Otherwise white in Chrome */
 	  border: #EFB019 3px solid;
     height:4px;
 }
 
+
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none !important;
-    background: blue;
+    background: #E0DBD0;
     height:15px;
     width:15px;
 	  border-radius:100%;
 	  cursor:pointer;
 }
+/* Firefox */
+input[type='range']::-moz-range-thumb {
+    background: #E0DBD0;
+    height:15px;
+    width:15px;
+	  border-radius:100%;
+	  cursor:pointer;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. ..should do some kind of focus styling for accessibility reasons..from CSS Tricks */
+}
+
+/* IE */
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
 
 #fullscreenbtn{
   background-color: transparent;
@@ -135,10 +167,11 @@ input[type='range']::-webkit-slider-thumb {
 
 #flex--margin_right{
   margin-right: 50%;
+  display: flex;
 }
 
 #curtimetext{
-  margin-left: 10px;
+  margin-left: -42px;
 }
 
 #text{
