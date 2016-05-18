@@ -61,3 +61,11 @@ $vidContainer.mouseleave(function () {
   			}
 
   	});
+
+
+
+
+  $("span").click(function(){
+    var curTime = $(this).attr("data-start"); //Set/get current time of span that is clicked on
+    vid.currentTime = curTime; //Note: The currentTime property represents the current playback position in seconds.
+  });                          //https://msdn.microsoft.com/en-us/library/hh924823%28v=vs.85%29.aspx

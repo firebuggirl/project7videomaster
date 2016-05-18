@@ -3,16 +3,16 @@ function intializePlayer(){
 	// Set object references
 	vid = document.getElementById("my_video");
 	playbtn = document.getElementById("playpausebtn");
-
-	stop = document.getElementById('stop');
-
-	seekslider = document.getElementById("seekslider");
+  stop = document.getElementById('stop');
+  seekslider = document.getElementById("seekslider");
   curtimetext = document.getElementById("curtimetext");
 	durtimetext = document.getElementById("durtimetext");
   mutebtn = document.getElementById("mutebtn");
   volumeslider = document.getElementById("volumeslider");
   fullscreenbtn = document.getElementById("fullscreenbtn");
   cc = document.getElementById('cc');
+  //span = document.getElementsByTagName('span')[0].getAttribute("data-start");
+
 	// Add event listeners
 	playbtn.addEventListener("click",playPause,false);
 	seekslider.addEventListener("change",vidSeek,false);
@@ -21,12 +21,15 @@ function intializePlayer(){
   volumeslider.addEventListener("change",setvolume,false);
   fullscreenbtn.addEventListener("click", toggleFullScreen, false);
 
-
-	stop.addEventListener('click', function(e) {
+  stop.addEventListener('click', function(e) {
 	    vid.pause();
 	    vid.currentTime = 0;
 	    progress.value = 0;
 	 });
+
+
+
+
 
 var track = vid.addTextTrack('subtitles', 'test', 'en');// add track element for subtitles via JS instead of directly in HTML
 track.mode = 'hidden';
@@ -108,9 +111,9 @@ function playPause(){
 };
 
 
-for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
-   vid.textTracks[i].mode = 'hidden';
-}
+//for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
+//   vid.textTracks[i].mode = 'hidden';
+//}
 
 function vidSeek(){
 	var seekto = vid.duration * (seekslider.value / 100);
@@ -166,9 +169,9 @@ function toggleFullScreen(){
 
 var cc = document.getElementById('cc');
 
-for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
-   vid.textTracks[i].mode = 'hidden';
-}
+//for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
+  // vid.textTracks[i].mode = 'hidden';
+//}
 
 
 cc.addEventListener('click', function(e) { //show caption text
