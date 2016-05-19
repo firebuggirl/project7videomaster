@@ -21,7 +21,8 @@ function intializePlayer(){
   volumeslider.addEventListener("change",setvolume,false);
   fullscreenbtn.addEventListener("click", toggleFullScreen, false);
 
-  stop.addEventListener('click', function(e) {
+
+	stop.addEventListener('click', function(e) {
 	    vid.pause();
 	    vid.currentTime = 0;
 	    progress.value = 0;

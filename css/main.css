@@ -53,11 +53,6 @@ input#seekslider{
 }
 
 
-#flex--wrapper:hover{
-
-
-}
-
 button#playpausebtn{
 	border:none;
 	width:28px;
@@ -208,21 +203,28 @@ html:-ms-fullscreen {
   .wrapper{
     max-width: 100%;
   }
+
+  #video-container{
+    border: 10px solid #232333;
+  }
   button#playpausebtn,
   button#mutebtn{
     width: 18px;
-    height: 22px;
+    height: 24px;
   }
   input#volumeslider{
     display: none;
   }
-  #curtimetext, #durtimetext{
-    /*margin-left: 0px;*/
+   #durtimetext{
     display: none;
+    margin-left: 10px;
+  }
+
+  #curtimetext{
+    margin-left: -32px;
   }
   input#volumeslider{
     width: 40px;
-    /*margin-top: 10px;*/
   }
   p {
 	margin-top: 20px;
