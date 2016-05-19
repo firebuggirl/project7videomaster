@@ -112,9 +112,9 @@ function playPause(){
 };
 
 
-//for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
-//   vid.textTracks[i].mode = 'hidden';
-//}
+for (var i = 0; i < vid.textTracks.length; i++) { //hide caption text-overflow
+  vid.textTracks[i].mode = 'hidden';
+}
 
 function vidSeek(){
 	var seekto = vid.duration * (seekslider.value / 100);
