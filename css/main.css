@@ -202,6 +202,9 @@ html:-ms-fullscreen {
 }
 
 @media (max-width: 435px){
+  body{
+    background-color: #ada89a;
+  }
   .wrapper{
     max-width: 100%;
   }
